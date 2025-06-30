@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🔥 Category-Based Quiz</h1>
+
+  <label for="categorySelect">Choose Category:</label>
+  <select id="categorySelect">
+    <option value="9">General Knowledge</option>
+    <option value="18">Science: Computers</option>
+    <option value="23">History</option>
+    <option value="27">Animals</option>
+  </select>
+
+  <div class="quiz-container">
+    <div id="question">Loading...</div>
+    <div id="answers"></div>
+    <button id="nextBtn">Next</button>
+    <div id="score"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
