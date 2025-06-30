@@ -19,7 +19,7 @@ async function loadQuiz(retries = 3) {
   const category = categorySelect.value;
 
   if (questionCount >= totalQuestions) {
-    questionEl.innerText = `✅ Quiz Completed!\nCategory: ${categorySelect.options[categorySelect.selectedIndex].text}`;
+    questionEl.innerText = `Quiz Completed!\nCategory: ${categorySelect.options[categorySelect.selectedIndex].text}`;
     answersEl.innerHTML = "";
     scoreEl.innerText = `Your final score: ${score} / ${totalQuestions}`;
     nextBtn.style.display = "none";
@@ -34,7 +34,7 @@ async function loadQuiz(retries = 3) {
 
     if (!data.results || data.results.length === 0) {
       if (retries > 0) return loadQuiz(retries - 1);
-      questionEl.innerText = "⚠️ No questions available. Try a different category.";
+      questionEl.innerText = "No questions available! Try a different category.";
       answersEl.innerHTML = "";
       return;
     }
@@ -63,7 +63,7 @@ async function loadQuiz(retries = 3) {
     scoreEl.innerText = `Category: ${categorySelect.options[categorySelect.selectedIndex].text} | Score: ${score}`;
 
   } catch (error) {
-    questionEl.innerText = "🚫 Failed to load question. Check your internet.";
+    questionEl.innerText = "Failed to load question. Check your internet connection.";
     answersEl.innerHTML = "";
     console.error(error);
   }
